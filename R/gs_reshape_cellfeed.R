@@ -104,7 +104,7 @@ gs_reshape_feed <- function(x, ddd, verbose = TRUE) {
     keep_row <- !grepl(paste0("^", ddd$comment), dat[[1]])
     dat <- dat[keep_row, , drop = FALSE]
     dat <- dat %>%
-      purrr::dmap(~stringr::str_replace(.x, paste0(ddd$comment, ".*"), ""))
+      purrrlyr::dmap(~stringr::str_replace(.x, paste0(ddd$comment, ".*"), ""))
   }
 
   if (!is.null(ddd$n_max)) {
@@ -119,6 +119,6 @@ gs_reshape_feed <- function(x, ddd, verbose = TRUE) {
   ## ~~no NA variable names~~ handled elsewhere (above) in this function
   ## NA vars should be logical, not character
   df %>%
-    purrr::dmap(force_na_type)
+    purrrlyr::dmap(force_na_type)
 
 }

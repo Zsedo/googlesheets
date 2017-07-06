@@ -18,6 +18,7 @@ Imports:
     httr (>= 1.1.0),
     jsonlite,
     purrr,
+    purrrlyr,
     readr (>= 0.2.2),
     stats,
     stringr,

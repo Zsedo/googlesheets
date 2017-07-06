@@ -39,7 +39,7 @@ cf_printme <- cf %>%
   arrange(col, row) %>%
   select(cell, value, input_value, numeric_value)
 knitr::kable(cf_printme %>%
-               purrr::dmap_if(purrr::is_character,
+               purrrlyr::dmap_if(purrr::is_character,
                               ~gsub('$', '\\$', .x, fixed = TRUE)))
 
 ## ------------------------------------------------------------------------

@@ -76,6 +76,6 @@ gs_read_csv <- function(ss, ws = 1, ..., verbose = TRUE) {
   nms <- names(df)
   names(df) <- fix_names(nms, ddd$check.names)
   df %>%
-    purrr::dmap(force_na_type)
+    purrrlyr::dmap(force_na_type)
 
 }
